@@ -7,14 +7,14 @@ const loginFormHandler = async (event) => {
 
   if (title && content) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/posts/', {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
