@@ -49,10 +49,8 @@ router.get('/project/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Project }],
@@ -92,7 +90,6 @@ router.get('/dashboard', async (req, res) => {
 });
 
 router.get('/newpost', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
@@ -102,7 +99,6 @@ router.get('/newpost', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
