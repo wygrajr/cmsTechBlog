@@ -8,15 +8,43 @@ router.post('/', async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    req.session.save(() => {
-      req.session.user_id = postData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(postData);
-    });
+    res.status(200).json(postData);
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+router.put('/:id', async (req, res) => {
+  try {
+    const postData = await Post.update({
+      ...req.body,
+      user_id: req.session.user_id,
+    }, 
+    {
+      where: {
+      id: req.params.id
+    }
+  });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const postData = await Post.destroy(
+    {
+      where: {
+      id: req.params.id
+    }
+   });
+
+    res.status(200).json(postData);
+    } catch (err) {
+    res.status(400).json(err);
+    }
 });
 
 module.exports = router;
