@@ -1,0 +1,17 @@
+[
+  {
+    "title": "MySQL and me",
+    "content": "Don't fear database management! MySQL is great and easy to learn. On my journey to becoming a full stack web developer I...",
+    "user_id": 1
+  },
+  {
+    "title": "The Ultimate Tech Guide",
+    "content": "Learning these concepts will help you understand the fundamentals of coding. By the end you will be a Wiz!",
+    "user_id": 1
+  },
+  {
+    "title": "Why won't it run?",
+    "content": "Let's explore some of the comman issues you will face when running your code. Don't worry, there is a solution and your code will work!",
+    "user_id": 1
+  }
+]
