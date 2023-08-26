@@ -1,0 +1,17 @@
+[
+  {
+    "content": "New is great!",
+    "user_id": 2,
+    "post_id": 3
+  },
+  {
+    "content": "Beacause it's enjoyable!",
+    "user_id": 2,
+    "post_id": 2
+  },
+  {
+    "content": "Fun!",
+    "user_id": 3,
+    "post_id": 1
+  }
+]
